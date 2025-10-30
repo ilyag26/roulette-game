@@ -1,1 +1,1 @@
-# Roullete game in React
+# Roulete game in React
