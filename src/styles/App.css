@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.game-block {
+  position: relative;
+  margin: 150px auto;
+  max-width: 750px;
+  height: 350px;
+  border-radius: 15px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  padding: 20px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.bg-rullet {
+  position: relative;
+  background-color: #2a2a2a;
+  padding: 10px 0;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.rulet {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.rulet li {
+  border-radius: 20px;
+  background: linear-gradient(145deg, #2f80ed, #56ccf2);
+  box-shadow: 0 5px 15px rgba(47,128,237,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rulet li.active {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rulet img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.gamble-line {
+  position: absolute;
+  width: 5px;
+  height: 100%;      
+  top: 50%;          
+  left: 50%;          
+  transform: translate(-50%, -50%); 
+  z-index: 10;
+  border-radius: 2px;
+}
+
+.button-start {
+  background: linear-gradient(145deg, #2f80ed, #56ccf2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(47,128,237,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.button-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(47,128,237,0.5);
+  background: linear-gradient(145deg, #56ccf2, #2f80ed);
+}
+
+.button-start:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(47,128,237,0.3);
+}
+
+@media (max-width: 768px) {
+  .game-block {
+    margin-top: 50%;
+    width: 90%;
+    height: 300px;
+    padding: 15px;
+  }
+
+  .rulet img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-block {
+    margin-top: 50%;
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+  }
+
+  .rulet img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .gamble-line {
+    width: 3px;
+  }
+}
